@@ -12,7 +12,7 @@ import traceback
 import re
 import time
 
-#爬虫抓取网页函数
+#爬虫抓取天天基金每日净值
 def getHtml(url):
     html = urllib.request.urlopen(url).read()
     html = html.decode('gbk')
