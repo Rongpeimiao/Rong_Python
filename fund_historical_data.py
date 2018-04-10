@@ -11,7 +11,7 @@ import re
 import time
 import pymysql
 
-#爬虫抓取网页函数
+#爬虫抓取天天基金历史净值函数
 def getHtml(url):
     html = urllib.request.urlopen(url).read()
     html = html.decode('gbk')
@@ -107,28 +107,6 @@ def createtables(cursor,db,codedb):
     except:
         print('The table '+dbname+' exists!'+strsql)
         return  '1'
-
-
-     # add the fileds
-#    try:
-#        for i in range(1):
-#            sql = "alter table addfields add key%s text" % i
-#            cursor.execute(sql)
-#    except Exception as  e:
-#         print(e)
-
-#    for i in range(4):  # insert 5 lines
-#        sql = "insert into addfields set id=%s" % i    #INSERT INTO addfields (id, name,...) VALUES (%s, %s)
-#        cursor.execute(sql)
-     #  sql = "update addfields set name = 'hello%s' where id= %s" % (i, i)
-     #   cursor.execute(sql)
-    # for j in range(5):
-    #  sql = "update addfields set key%s = 'world%s%s' where id=%s" % (j, i, j, i)
-        #  cursor.execute(sql)
-            # this is very important
-    # sql = "INSERT INTO addfields (id, name) VALUES (%s, %s)" %(1111, '11111')
-    #cursor.execute(sql)
-
 
 def do_query(cursor, db):
     sql = "SELECT * FROM fund_tab "  #\ WHERE INCOME > '%d'
