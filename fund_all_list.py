@@ -12,7 +12,7 @@ import time
 import pymysql
 
 
-#爬虫抓取网页函数
+#爬虫抓取天天基金网站的基金列表数据函数
 def getHtml(url):
     html = urllib.request.urlopen(url).read()
     html = html.decode('gbk')
@@ -49,9 +49,9 @@ def gettrtext(language):
      except:
         return ""
 
-#数据连接地址
+#网站数据连接地址
 def getUrltext():
-   Url = 'http://fund.eastmoney.com/fundguzhi1.html'#数据连接地址
+   Url = 'http://fund.eastmoney.com/fundguzhi1.html'
    #实施抓取
    # code = getStackCode(getHTMLText(Url))
    html = getHTMLText(Url)
